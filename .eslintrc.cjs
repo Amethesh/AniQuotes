@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2021: true
   },
   extends: [
     "airbnb",
@@ -10,12 +10,13 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
+    "prettier"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
-    project: "./tsconfig.json",
+    project: "./tsconfig.json"
   },
   plugins: ["react", "react-refresh", "@typescript-eslint", "prettier"],
   rules: {
@@ -26,15 +27,16 @@ module.exports = {
       "error",
       "double",
       {
-        avoidEscape: true,
-      },
+        avoidEscape: true
+      }
     ],
     "@typescript-eslint/quotes": [
       "error",
       "double",
       {
-        avoidEscape: true,
-      },
+        avoidEscape: true
+      }
     ],
-  },
+    "array-element-newline": "consistent"
+  }
 };
