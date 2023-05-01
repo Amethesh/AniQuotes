@@ -1,0 +1,1 @@
+A website for displaying and readig anime qoutes
