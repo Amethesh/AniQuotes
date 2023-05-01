@@ -1,4 +1,11 @@
 body {
   background-color: black;
   color: aliceblue;
+  background: radial-gradient(ellipse at 50% 50%,#ee6292, #f8779b, rgba(255,144,168,1));
+  background: radial-gradient(circle at 50% 50%,#013440, #151B20);
+  background: radial-gradient(ellipse at 50% 50%,#013440, #151B20);
+  /* background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%); */
+  /* background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%); */
+  
+  
 }

@@ -8,7 +8,6 @@ interface Quote {
 
 function Random() {
 	const [quote, setQuote] = useState<Quote | null>(null);
-
 	const fetchQuote = () => {
 		fetch("https://animechan.vercel.app/api/random")
 			.then((response) => response.json())
