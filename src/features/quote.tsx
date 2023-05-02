@@ -4,7 +4,7 @@ export const quoteSlice = createSlice({
 	name: "quote",
 	initialState: {
 		value: {
-			title: "sdgsfdgs",
+			anime: "sdgsfdgs",
 			character: "sdhgsfdhsdf",
 			image: "",
 			quote: ""

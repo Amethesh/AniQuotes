@@ -1,23 +1,19 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getRandomQuote } from "../features/quote";
-
-interface Quote {
-	quote: string;
-	character: string;
-	anime: string;
-}
+import { Quote } from "../types/interface";
 
 function Random() {
 	const dispatch = useDispatch();
 
-	const [quote, setQuote] = useState<Quote | null>(null);
+	// const [quote, setQuote] = useState<Quote | null>(null);
 	const fetchQuote = () => {
+		console.log("Fetching quote");
 		fetch("https://animechan.vercel.app/api/random")
 			.then((response) => response.json())
 			.then((data: Quote) => {
-				setQuote(data);
-				dispatch(getRandomQuote(quote));
+				// setQuote(data);
+				dispatch(getRandomQuote(data));
 			});
 	};
 
