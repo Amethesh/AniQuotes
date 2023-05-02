@@ -3,9 +3,10 @@ import Card from "./components/Card";
 import Random from "./components/Random";
 import { useSelector } from "react-redux";
 import { Quote } from "./types/interface";
+import { RandomQuote } from "./features/quote";
 
 function App() {
-	const quote = useSelector((state: Quote) => state.quote.value);
+	const quote = useSelector(RandomQuote);
 
 	return (
 		<>
@@ -15,7 +16,7 @@ function App() {
 				character="Suzaku Kururugi"
 				quote="The best way to remove your lies is to make them come true"
 			/> */}
-			<Card title={quote.anime} character={quote.character} quote={quote.quote} />
+			<Card anime={quote.anime} character={quote.character} image={quote.image} quote={quote.quote} />
 			<Random />
 		</>
 	);
