@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getRandomQuote } from "../features/quote";
-import { Quote } from "../types/interface";
+import { getRandomQuote } from "../../features/quote";
+import { Quote } from "../../types/interface";
 
 function Random() {
 	const dispatch = useDispatch();

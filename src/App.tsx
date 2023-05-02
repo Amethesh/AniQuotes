@@ -1,9 +1,11 @@
 import "./styles/main.css";
 import Card from "./components/Card";
-import Random from "./components/Random";
+import Random from "./components/RandomQuotes/Random";
 import { useSelector } from "react-redux";
-import { Quote } from "./types/interface";
+// import { Quote } from "./types/interface";
 import { RandomQuote } from "./features/quote";
+import RandomCharacter from "./components/RandomQuotes/Character";
+import RandomAnime from "./components/RandomQuotes/Anime";
 
 function App() {
 	const quote = useSelector(RandomQuote);
@@ -18,6 +20,8 @@ function App() {
 			/> */}
 			<Card anime={quote.anime} character={quote.character} image={quote.image} quote={quote.quote} />
 			<Random />
+			<RandomAnime />
+			<RandomCharacter />
 		</>
 	);
 }
