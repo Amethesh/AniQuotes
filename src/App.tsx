@@ -1,14 +1,15 @@
 import "./styles/main.css";
 import Card from "./components/Card";
 import Random from "./components/RandomQuotes/Random";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 // import { Quote } from "./types/interface";
-import { RandomQuote } from "./features/quote";
+// import { RandomQuote } from "./features/quote";
 import RandomCharacter from "./components/RandomQuotes/Character";
 import RandomAnime from "./components/RandomQuotes/Anime";
+import Random10 from "./components/Get10Quotes/Random10";
 
 function App() {
-	const quote = useSelector(RandomQuote);
+	// const quote = useSelector(RandomQuote);
 
 	return (
 		<>
@@ -18,10 +19,11 @@ function App() {
 				character="Suzaku Kururugi"
 				quote="The best way to remove your lies is to make them come true"
 			/> */}
-			<Card anime={quote.anime} character={quote.character} image={quote.image} quote={quote.quote} />
+			<Card />
 			<Random />
 			<RandomAnime />
 			<RandomCharacter />
+			<Random10 />
 		</>
 	);
 }

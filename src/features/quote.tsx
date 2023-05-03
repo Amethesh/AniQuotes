@@ -11,7 +11,8 @@ const initialState: QuoteState = {
 		character: "Aizen Sousuke",
 		image:
 			"https://preview.redd.it/how-would-you-rank-the-espada-and-aizen-based-on-their-v0-hfd71ol8p7t81.jpg?width=736&format=pjpg&auto=webp&s=55d2c4160118e47dc5641e4e13382794d396df9b",
-		quote: "Any betrayal you can see is trivial, what is truly frightening and much more lethal, is the betrayal you cannot see."
+		quote:
+			"Any betrayal you can see is trivial, what is truly frightening and much more lethal, is the betrayal you cannot see."
 	}
 };
 
