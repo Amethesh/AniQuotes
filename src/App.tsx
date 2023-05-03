@@ -7,6 +7,8 @@ import Random from "./components/RandomQuotes/Random";
 import RandomCharacter from "./components/RandomQuotes/Character";
 import RandomAnime from "./components/RandomQuotes/Anime";
 import Random10 from "./components/Get10Quotes/Random10";
+import Anime10 from "./components/Get10Quotes/Anime10";
+import Character10 from "./components/Get10Quotes/Character10";
 
 function App() {
 	// const quote = useSelector(RandomQuote);
@@ -24,6 +26,8 @@ function App() {
 			<RandomAnime />
 			<RandomCharacter />
 			<Random10 />
+			<Anime10 />
+			<Character10 />
 		</>
 	);
 }
