@@ -4,3 +4,7 @@ export interface Quote {
 	image?: string;
 	quote: string;
 }
+
+export interface InputProps {
+	quoteInput: string;
+}

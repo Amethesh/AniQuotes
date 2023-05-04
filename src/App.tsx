@@ -1,4 +1,5 @@
 import "./styles/main.css";
+import { useState } from "react";
 import Card from "./components/Card";
 import Random from "./components/RandomQuotes/Random";
 // import { useSelector } from "react-redux";
@@ -12,22 +13,25 @@ import Character10 from "./components/Get10Quotes/Character10";
 
 function App() {
 	// const quote = useSelector(RandomQuote);
+	const [quoteInput, setQuoteInput] = useState<string>("");
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setQuoteInput(e.target.value);
+	};
+
+	console.log(quoteInput);
 
 	return (
 		<>
 			<h1>Home</h1>
-			{/* <Card
-				title="Code Geass: Lelouch of the Rebellion"
-				character="Suzaku Kururugi"
-				quote="The best way to remove your lies is to make them come true"
-			/> */}
+			<input type="text" name="main-input" id="main-input" onChange={handleInputChange} />
 			<Card />
 			<Random />
-			<RandomAnime />
-			<RandomCharacter />
+			<RandomAnime quoteInput={quoteInput} />
+			<RandomCharacter quoteInput={quoteInput} />
 			<Random10 />
-			<Anime10 />
-			<Character10 />
+			<Anime10 quoteInput={quoteInput} />
+			<Character10 quoteInput={quoteInput} />
 		</>
 	);
 }
