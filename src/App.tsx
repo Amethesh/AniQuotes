@@ -5,11 +5,12 @@ import Random from "./components/RandomQuotes/Random";
 // import { useSelector } from "react-redux";
 // import { Quote } from "./types/interface";
 // import { RandomQuote } from "./features/quote";
-import RandomCharacter from "./components/RandomQuotes/Character";
-import RandomAnime from "./components/RandomQuotes/Anime";
-import Random10 from "./components/Get10Quotes/Random10";
-import Anime10 from "./components/Get10Quotes/Anime10";
-import Character10 from "./components/Get10Quotes/Character10";
+// import RandomCharacter from "./components/RandomQuotes/Character";
+// import RandomAnime from "./components/RandomQuotes/Anime";
+import Random10 from "./components/RandomQuotes/Random10";
+// import Anime10 from "./components/Get10Quotes/Anime10";
+// import Character10 from "./components/Get10Quotes/Character10";
+import ApiRequest from "./components/ApiRequest";
 
 function App() {
 	// const quote = useSelector(RandomQuote);
@@ -27,11 +28,12 @@ function App() {
 			<input type="text" name="main-input" id="main-input" onChange={handleInputChange} />
 			<Card />
 			<Random />
-			<RandomAnime quoteInput={quoteInput} />
-			<RandomCharacter quoteInput={quoteInput} />
+			{/* <RandomAnime quoteInput={quoteInput} /> */}
+			{/* <RandomCharacter quoteInput={quoteInput} /> */}
 			<Random10 />
-			<Anime10 quoteInput={quoteInput} />
-			<Character10 quoteInput={quoteInput} />
+			<ApiRequest quoteInput={quoteInput} />
+			{/* <Anime10 quoteInput={quoteInput} /> */}
+			{/* <Character10 quoteInput={quoteInput} /> */}
 		</>
 	);
 }
