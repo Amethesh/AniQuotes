@@ -1,24 +1,56 @@
 import { useDispatch } from "react-redux";
-import { Quote, InputProps } from "../types/interface";
+import { Quote, InputProps, Character } from "../types/interface";
 import { getQuoteSuccess, getQuoteLoading, getQuoteError } from "../features/quoteSlice";
-// import { useState } from "react";
+import { GET_CHARACTER_INFO } from "../GraphQL/Queries";
+import { useLazyQuery } from "@apollo/client";
+import { getCharacterSuccess, getCharacterLoading, getCharacterError } from "../features/characterSlice";
 
 const URL = "https://animechan.vercel.app/api";
 
 const ApiRequest = ({ quoteInput }: InputProps) => {
 	const dispatch = useDispatch();
 	// const [animeTitle, setAnimeTitle] = useState<string | null>(null);
+	const [getCharacterInfo, { data: info }] = useLazyQuery<Character>(GET_CHARACTER_INFO, {
+		onError(error) {
+			dispatch(getCharacterError(error));
+		}
+	});
 
 	dispatch(getQuoteLoading());
 
-	const fetchQuote = (request: string) => {
+	const handleCharacterInfo = (characterName: string) => {
+		dispatch(getCharacterLoading());
+		getCharacterInfo({ variables: { characterName } });
+		dispatch(getCharacterSuccess(info));
+	};
+
+	//! Single Quote
+	const fetchSingleQuote = (request: string) => {
 		console.log(`Sending Request: ${request}`);
 
 		fetch(`${URL}${request}${quoteInput}`)
 			.then((response) => response.json())
-			.then((data: Quote[]) => {
+			.then((data: Quote) => {
 				console.log(data);
 				dispatch(getQuoteSuccess(data));
+				handleCharacterInfo(data.character);
+			})
+			.catch((error) => {
+				console.log(error);
+				dispatch(getQuoteError(error));
+			});
+	};
+
+	//! Multiple Quote
+	const fetchMultipleQuote = (request: string) => {
+		console.log(`Sending multiple request: ${request}`);
+
+		fetch(`${URL}${request}${quoteInput}`)
+			.then((response) => response.json())
+			.then((data: Quote) => {
+				console.log(data);
+				dispatch(getQuoteSuccess(data));
+				handleCharacterInfo(data.character);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -27,16 +59,16 @@ const ApiRequest = ({ quoteInput }: InputProps) => {
 	};
 
 	const handleAnime = () => {
-		fetchQuote("/random/anime?title=");
+		fetchSingleQuote("/random/anime?title=");
 	};
 	const handleCharacter = () => {
-		fetchQuote("/random/character?name=");
+		fetchSingleQuote("/random/character?name=");
 	};
 	const handle10Anime = () => {
-		fetchQuote("/quotes/anime?title=");
+		fetchMultipleQuote("/quotes/anime?title=");
 	};
 	const handle10Character = () => {
-		fetchQuote("/quotes/character?name=");
+		fetchMultipleQuote("/quotes/character?name=");
 	};
 
 	return (

@@ -1,20 +1,7 @@
 import "../styles/card.css";
 // import { Quote } from "../types/interface";
 import { useSelector } from "react-redux";
-import { getQuoteSuccess, getQuoteLoading, getQuoteError } from "../features/quoteSlice";
-
-// type CardProps = {
-// 	title: string;
-// 	character: string;
-// 	image?: string;
-// 	quote: string;
-// };
-// {
-// 	anime,
-// 	image = "https://animesher.com/orig/0/93/932/9329/animesher.com_not-found-gone-anime-boy-932950.gif",
-// 	character,
-// 	quote
-// }: Quote
+import { getQuoteSuccess, getQuoteLoading, getQuoteError, RandomQuote } from "../features/quoteSlice";
 
 const CharacterCard = () => {
 	const quote = useSelector(RandomQuote);

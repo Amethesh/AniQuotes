@@ -30,7 +30,7 @@ const characterSlice = createSlice({
 	name: "character",
 	initialState,
 	reducers: {
-		getCharacterRequest: (state) => {
+		getCharacterLoading: (state) => {
 			state.isLoading = true;
 			state.error = null;
 		},
@@ -39,13 +39,13 @@ const characterSlice = createSlice({
 			state.isLoading = false;
 			state.error = null;
 		},
-		getCharacterFailure: (state, action) => {
+		getCharacterError: (state, action) => {
 			state.isLoading = false;
 			state.error = action.payload;
 		}
 	}
 });
 
-export const { getCharacterRequest, getCharacterSuccess, getCharacterFailure } = characterSlice.actions;
+export const { getCharacterLoading, getCharacterSuccess, getCharacterError } = characterSlice.actions;
 export const CharacterDetails = (state: { character: CharacterState }) => state.character.value;
 export default characterSlice.reducer;
