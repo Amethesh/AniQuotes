@@ -4,7 +4,7 @@ import { Quote } from "../types/interface";
 interface QuoteState {
 	value: Quote;
 	isLoading: boolean;
-	error: string | null;
+	error: string | null | number;
 }
 
 const initialState: QuoteState = {
@@ -23,11 +23,21 @@ export const quoteSlice = createSlice({
 	initialState,
 	reducers: {
 		getQuoteLoading: (state) => {
+			state.isLoading = true;
+			state.error = null;
+		},
+		getQuoteSuccess: (state, action) => {
 			state.value = action.payload;
+			state.isLoading = false;
+			state.error = null;
+		},
+		getQuoteError: (state, action) => {
+			state.isLoading = false;
+			state.error = action.payload;
 		}
 	}
 });
 
-export const { getQuote } = quoteSlice.actions;
+export const { getQuoteSuccess, getQuoteLoading, getQuoteError } = quoteSlice.actions;
 export const RandomQuote = (state: { quote: QuoteState }) => state.quote.value;
 export default quoteSlice.reducer;

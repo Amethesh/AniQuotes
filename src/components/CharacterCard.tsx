@@ -1,7 +1,7 @@
 import "../styles/card.css";
 // import { Quote } from "../types/interface";
 import { useSelector } from "react-redux";
-import { LoadingStatus, RandomQuote, getError } from "../features/quoteSlice";
+import { getQuoteSuccess, getQuoteLoading, getQuoteError } from "../features/quoteSlice";
 
 // type CardProps = {
 // 	title: string;

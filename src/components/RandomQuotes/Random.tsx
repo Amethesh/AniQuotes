@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { getRandomQuote } from "../../features/quote";
+import { getQuoteSuccess } from "../../features/quoteSlice";
 import { Quote } from "../../types/interface";
 
 function Random() {
@@ -12,7 +12,7 @@ function Random() {
 			.then((response) => response.json())
 			.then((data: Quote) => {
 				// setQuote(data);
-				dispatch(getRandomQuote(data));
+				dispatch(getQuoteSuccess(data));
 			});
 	};
 

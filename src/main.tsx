@@ -5,11 +5,13 @@ import App from "./App.tsx";
 import "./styles/reset.css";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import quoteReducer from "./features/quote";
+import quoteReducer from "./features/quoteSlice";
+import characterReducer from "./features/characterSlice";
 
 const store = configureStore({
 	reducer: {
-		quote: quoteReducer
+		quote: quoteReducer,
+		character: characterReducer
 	}
 });
 

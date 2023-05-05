@@ -2,7 +2,7 @@ import { gql, useLazyQuery } from "@apollo/client";
 import { CharacterInfoProps } from "../../types/interface";
 import { CharacterInfo } from "../../types/interface";
 import { useDispatch } from "react-redux";
-import { getError, getRandomQuote, isLoading } from "../../features/quoteSlice";
+import {} from "../../features/quoteSlice";
 
 const GET_CHARACTER_INFO = gql`
 	query Character($characterName: String) {

@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Quote } from "../../types/interface";
-import { getRandomQuote } from "../../features/quote";
+import { getQuoteSuccess } from "../../features/quoteSlice";
 
 const URL = "https://animechan.vercel.app/api";
 
@@ -14,7 +14,7 @@ const Random10 = () => {
 			.then((response) => response.json())
 			.then((data: Quote[]) => {
 				console.log(data);
-				dispatch(getRandomQuote(data));
+				dispatch(getQuoteSuccess(data));
 			});
 	};
 
