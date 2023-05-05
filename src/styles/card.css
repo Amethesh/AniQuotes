@@ -12,7 +12,7 @@
     color: hsla(290, 25%, 76%, 1);
 }
 html{
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .card h1{
