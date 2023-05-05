@@ -11,6 +11,9 @@ const ApiRequest = ({ quoteInput }: InputProps) => {
 	const dispatch = useDispatch();
 	// const [animeTitle, setAnimeTitle] = useState<string | null>(null);
 	const [getCharacterInfo, { data: info }] = useLazyQuery<Character>(GET_CHARACTER_INFO, {
+		onCompleted(data) {
+			dispatch(getCharacterSuccess(data));
+		},
 		onError(error) {
 			dispatch(getCharacterError(error));
 		}
@@ -20,8 +23,9 @@ const ApiRequest = ({ quoteInput }: InputProps) => {
 
 	const handleCharacterInfo = (characterName: string) => {
 		dispatch(getCharacterLoading());
+		console.log("getting character info");
 		getCharacterInfo({ variables: { characterName } });
-		dispatch(getCharacterSuccess(info));
+		// dispatch(getCharacterSuccess(info));
 	};
 
 	//! Single Quote
