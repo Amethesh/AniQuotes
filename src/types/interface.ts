@@ -1,7 +1,6 @@
 export interface Quote {
 	anime: string;
 	character: string;
-	image?: string;
 	quote: string;
 }
 
@@ -12,7 +11,7 @@ export interface CharacterInfoProps {
 	characterName: string;
 }
 
-export interface Character {
+export interface CharacterInfo extends Quote {
 	Character: {
 		name: {
 			first: string;
@@ -22,7 +21,6 @@ export interface Character {
 		};
 		image: {
 			large: string;
-			medium: string;
 		};
 		description: string;
 	};

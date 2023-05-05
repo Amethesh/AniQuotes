@@ -1,12 +1,12 @@
 import "./styles/main.css";
 import { useState } from "react";
-import Card from "./components/Card";
+import CharacterCard from "./components/CharacterCard";
 import Random from "./components/RandomQuotes/Random";
 import Random10 from "./components/RandomQuotes/Random10";
 import ApiRequest from "./components/ApiRequest";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import CharacterInfo from "./components/Anilist/TestApi";
-import { Testrender } from "./components/Anilist/testrender";
+// import CharacterInfo from "./components/Anilist/TestApi";
+// import { Testrender } from "./components/Anilist/testrender";
 // import { useSelector } from "react-redux";
 // import { Quote } from "./types/interface";
 // import { RandomQuote } from "./features/quote";
@@ -34,14 +34,14 @@ function App() {
 		<ApolloProvider client={client}>
 			<h1>Home</h1>
 			<input type="text" name="main-input" id="main-input" onChange={handleInputChange} />
-			<Card />
-			<CharacterInfo />
+			<CharacterCard />
+			{/* <CharacterInfo /> */}
 			<Random />
 			{/* <RandomAnime quoteInput={quoteInput} /> */}
 			{/* <RandomCharacter quoteInput={quoteInput} /> */}
 			<Random10 />
 			<ApiRequest quoteInput={quoteInput} />
-			<Testrender />
+			{/* <Testrender /> */}
 			{/* <Anime10 quoteInput={quoteInput} /> */}
 			{/* <Character10 quoteInput={quoteInput} /> */}
 		</ApolloProvider>

@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Quote, InputProps } from "../types/interface";
 import { getRandomQuote } from "../features/quote";
+import CharacterInfo from "./Anilist/CharacterInfo";
 // import { useState } from "react";
 
 const URL = "https://animechan.vercel.app/api";
@@ -14,9 +15,10 @@ const ApiRequest = ({ quoteInput }: InputProps) => {
 
 		fetch(`${URL}${request}${quoteInput}`)
 			.then((response) => response.json())
-			.then((data: Quote[]) => {
+			.then((data: Quote) => {
 				console.log(data);
 				dispatch(getRandomQuote(data));
+				CharacterInfo(data.character);
 			});
 	};
 

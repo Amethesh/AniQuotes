@@ -1,6 +1,8 @@
 import { gql, useLazyQuery } from "@apollo/client";
 import { CharacterInfoProps } from "../../types/interface";
 import { CharacterInfo } from "../../types/interface";
+import { useDispatch } from "react-redux";
+import { getError, getRandomQuote, isLoading } from "../../features/quote";
 
 const GET_CHARACTER_INFO = gql`
 	query Character($characterName: String) {
@@ -13,16 +15,16 @@ const GET_CHARACTER_INFO = gql`
 			}
 			image {
 				large
-				medium
 			}
 			description
 		}
 	}
 `;
 
-function CharacterInfo({ characterName }: CharacterInfoProps) {
+function CharacterInfo(characterName: string) {
 	// const [characterName, setCharacterName] = useState("");
 	const [getCharacterInfo, { loading, error, data }] = useLazyQuery<CharacterInfo>(GET_CHARACTER_INFO);
+	const dispatch = useDispatch();
 
 	console.log(characterName);
 
@@ -30,6 +32,9 @@ function CharacterInfo({ characterName }: CharacterInfoProps) {
 
 	console.log(data);
 
+	dispatch(getRandomQuote(data));
+	dispatch(isLoading(loading));
+	dispatch(getError(error));
 	// if (!character) return null;
 
 	// let character: Character = data.Character[0];
