@@ -1,8 +1,7 @@
 import "./styles/main.css";
 import { useState } from "react";
-import CharacterCard from "./components/CharacterCard";
+import CharacterCard from "./components/SingleCard";
 import Random from "./components/RandomQuotes/Random";
-import Random10 from "./components/RandomQuotes/Random10";
 import ApiRequest from "./components/ApiRequest";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 // import CharacterInfo from "./components/Anilist/TestApi";
@@ -39,7 +38,6 @@ function App() {
 			<Random />
 			{/* <RandomAnime quoteInput={quoteInput} /> */}
 			{/* <RandomCharacter quoteInput={quoteInput} /> */}
-			<Random10 />
 			<ApiRequest quoteInput={quoteInput} />
 			{/* <Testrender /> */}
 			{/* <Anime10 quoteInput={quoteInput} /> */}

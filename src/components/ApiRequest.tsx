@@ -10,7 +10,7 @@ const URL = "https://animechan.vercel.app/api";
 const ApiRequest = ({ quoteInput }: InputProps) => {
 	const dispatch = useDispatch();
 	// const [animeTitle, setAnimeTitle] = useState<string | null>(null);
-	const [getCharacterInfo, { data: info }] = useLazyQuery<Character>(GET_CHARACTER_INFO, {
+	const [getCharacterInfo, {}] = useLazyQuery<Character>(GET_CHARACTER_INFO, {
 		onCompleted(data) {
 			dispatch(getCharacterSuccess(data));
 		},
@@ -19,9 +19,8 @@ const ApiRequest = ({ quoteInput }: InputProps) => {
 		}
 	});
 
-	dispatch(getQuoteLoading());
-
 	const handleCharacterInfo = (characterName: string) => {
+		dispatch(getQuoteLoading());
 		dispatch(getCharacterLoading());
 		console.log("getting character info");
 		getCharacterInfo({ variables: { characterName } });
