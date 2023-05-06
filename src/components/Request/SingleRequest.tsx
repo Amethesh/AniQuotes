@@ -72,15 +72,17 @@ const Si = ({ quoteInput }: InputProps) => {
 	};
 
 	return (
-		<div className="UsingAnime">
-			{/* <input type="text" placeholder="10 Anime title" onChange={(e) => setAnimeTitle(e.target.value || null)} /> */}
-			<button onClick={handleRandom}>Get Random Quote</button>
-			<button onClick={handleAnime} disabled={quoteInput === ""}>
-				Get Anime Quote
-			</button>
-			<button onClick={handleCharacter} disabled={quoteInput === ""}>
-				Get Character Quote
-			</button>
+		<div className="container">
+			<div className="single-button">
+				{/* <input type="text" placeholder="10 Anime title" onChange={(e) => setAnimeTitle(e.target.value || null)} /> */}
+				<button onClick={handleRandom}>Get Random Quote</button>
+				<button onClick={handleAnime} disabled={quoteInput === ""}>
+					Get Anime Quote
+				</button>
+				<button onClick={handleCharacter} disabled={quoteInput === ""}>
+					Get Character Quote
+				</button>
+			</div>
 		</div>
 	);
 };

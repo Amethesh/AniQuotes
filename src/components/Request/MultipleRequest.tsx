@@ -109,14 +109,16 @@ const MultipleRequest = ({ quoteInput }: InputProps) => {
 	};
 
 	return (
-		<div className="UsingAnime">
-			<button onClick={handle10Random}>Get 10 Random Quote</button>
-			<button onClick={handle10Anime} disabled={quoteInput === ""}>
-				Get 10 Anime Quote
-			</button>
-			<button onClick={handle10Character} disabled={quoteInput === ""}>
-				Get 10 Character Quote
-			</button>
+		<div className="container">
+			<div className="multiple-button">
+				<button onClick={handle10Random}>Get 10 Random Quote</button>
+				<button onClick={handle10Anime} disabled={quoteInput === ""}>
+					Get 10 Anime Quote
+				</button>
+				<button onClick={handle10Character} disabled={quoteInput === ""}>
+					Get 10 Character Quote
+				</button>
+			</div>
 		</div>
 	);
 };

@@ -33,17 +33,11 @@ function App() {
 	return (
 		<ApolloProvider client={client}>
 			<h1>Home</h1>
+
 			<input type="text" name="main-input" id="main-input" onChange={handleInputChange} />
 			<CharacterCard />
-			{/* <CharacterInfo /> */}
-			{/* <Random /> */}
-			{/* <RandomAnime quoteInput={quoteInput} /> */}
-			{/* <RandomCharacter quoteInput={quoteInput} /> */}
 			<SingleRequest quoteInput={quoteInput} />
 			<MultipleRequest quoteInput={quoteInput} />
-			{/* <Testrender /> */}
-			{/* <Anime10 quoteInput={quoteInput} /> */}
-			{/* <Character10 quoteInput={quoteInput} /> */}
 		</ApolloProvider>
 	);
 }

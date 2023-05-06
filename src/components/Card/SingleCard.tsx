@@ -31,18 +31,20 @@ const CharacterCard = () => {
 
 	return (
 		<>
-			<section className="card">
-				<h1 className="title">{quotes.anime}</h1>
-				<img
-					src={
-						details[0].Character.image.large ||
-						"https://animesher.com/orig/0/93/932/9329/animesher.com_not-found-gone-anime-boy-932950.gif"
-					}
-					alt="NOT_FOUND"
-				/>
-				<h2 className="character">{quotes.character}</h2>
-				<p className="quote"> {quotes.quote}</p>
-			</section>
+			<div className="container">
+				<section className="card">
+					<h1 className="title">{quotes.anime}</h1>
+					<img
+						src={
+							details[0].Character.image.large ||
+							"https://animesher.com/orig/0/93/932/9329/animesher.com_not-found-gone-anime-boy-932950.gif"
+						}
+						alt="NOT_FOUND"
+					/>
+					<h2 className="character">{quotes.character}</h2>
+					<p className="quote"> {quotes.quote}</p>
+				</section>
+			</div>
 		</>
 	);
 };
