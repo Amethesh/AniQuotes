@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    color: aliceblue;
+    background: radial-gradient(ellipse at 50% 50%,#ee6292, #f8779b, rgba(255,144,168,1));
+    background: radial-gradient(circle at 50% 50%,#013440, #151B20);
+    /* background: radial-gradient(ellipse at 50% 50%,#013440, #151B20); */
+    /* background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%); */
+    /* background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%); */
+  }
+  
+  .container {
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* align-items: center; */
+  }
+
+/*! Style for Buttons */
+
+.left{
+  background-color: #013440;
+}
+
+.left input{
+  width: 200px;
+  height: 25px;
+  border-radius: 8px;
+  border: none;
+}
+  
+
+  
+  
+/*! Style for Card */
+  .card{
+    background-color: #ee6292;
+  }
