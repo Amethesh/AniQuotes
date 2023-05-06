@@ -7,7 +7,7 @@ import { getCharacterSuccess, getCharacterLoading, getCharacterError } from "../
 
 const URL = "https://animechan.vercel.app/api";
 
-const ApiRequest = ({ quoteInput }: InputProps) => {
+const Si = ({ quoteInput }: InputProps) => {
 	const dispatch = useDispatch();
 	// const [animeTitle, setAnimeTitle] = useState<string | null>(null);
 	const [getCharacterInfo, {}] = useLazyQuery<Character>(GET_CHARACTER_INFO, {
@@ -85,4 +85,4 @@ const ApiRequest = ({ quoteInput }: InputProps) => {
 	);
 };
 
-export default ApiRequest;
+export default Si;

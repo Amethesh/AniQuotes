@@ -2,8 +2,9 @@ import "./styles/main.css";
 import { useState } from "react";
 import CharacterCard from "./components/Card/SingleCard";
 // import Random from "./components/RandomQuotes/Random";
-import ApiRequest from "./components/Request/SingleRequest";
+import SingleRequest from "./components/Request/SingleRequest";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import MultipleRequest from "./components/Request/MultipleRequest";
 // import CharacterInfo from "./components/Anilist/TestApi";
 // import { Testrender } from "./components/Anilist/testrender";
 // import { useSelector } from "react-redux";
@@ -38,7 +39,8 @@ function App() {
 			{/* <Random /> */}
 			{/* <RandomAnime quoteInput={quoteInput} /> */}
 			{/* <RandomCharacter quoteInput={quoteInput} /> */}
-			<ApiRequest quoteInput={quoteInput} />
+			<SingleRequest quoteInput={quoteInput} />
+			<MultipleRequest quoteInput={quoteInput} />
 			{/* <Testrender /> */}
 			{/* <Anime10 quoteInput={quoteInput} /> */}
 			{/* <Character10 quoteInput={quoteInput} /> */}
