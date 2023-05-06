@@ -1,8 +1,8 @@
 import "../styles/card.css";
 // import { Quote } from "../types/interface";
 import { useSelector } from "react-redux";
-import { RandomQuote } from "../features/quoteSlice";
-import { CharacterDetails } from "../features/characterSlice";
+import { RandomQuote } from "../../features/quoteSlice";
+import { CharacterDetails } from "../../features/characterSlice";
 
 const CharacterCard = () => {
 	const quote = useSelector(RandomQuote);
@@ -17,7 +17,7 @@ const CharacterCard = () => {
 					<h1 className="title">{quote.anime}</h1>
 					<img
 						src={
-							details.Character.image.large ||
+							details[0].Character.image.large ||
 							"https://animesher.com/orig/0/93/932/9329/animesher.com_not-found-gone-anime-boy-932950.gif"
 						}
 						alt="NOT_FOUND"
