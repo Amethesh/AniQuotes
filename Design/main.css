@@ -1,38 +1,94 @@
+:root {
+  --Primary: #fee1f6 ;
+  --Secondary: #181e28;
+  --Card: #384150;
+  --Primary-Button: #e055b8;
+  --Secondary-Button: #bdffff ;
+  --Accent: #e055b8;
+  --grident: linear-gradient(90deg, #e055b8, #fee1f6 );
+
+}
+
+
+
 body {
-    background-color: black;
-    color: aliceblue;
-    background: radial-gradient(ellipse at 50% 50%,#ee6292, #f8779b, rgba(255,144,168,1));
-    background: radial-gradient(circle at 50% 50%,#013440, #151B20);
-    /* background: radial-gradient(ellipse at 50% 50%,#013440, #151B20); */
-    /* background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%); */
-    /* background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%); */
-  }
-  
-  .container {
-    display: flex;
-    background-color: aliceblue;
-    flex-direction: row;
-    justify-content: space-evenly;
-    /* align-items: center; */
-  }
+  background-color: var(--Secondary);
+}
+
+/* .main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+} */
+
+.container {
+  /* filter: url(#noiseFilter); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
 
 /*! Style for Buttons */
 
 .left{
-  background-color: #013440;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  justify-content: center;
+}
+
+.left img{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.left h1{
+  margin: auto;
+  background: var(--grident);
+  font-size: 40px;
+}
+
+.left .input{
+  display: flex;
+  justify-content: center;
 }
 
 .left input{
-  width: 200px;
-  height: 25px;
-  border-radius: 8px;
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--Card);
   border: none;
+  margin: 10px;
+  
 }
   
+.left .buttons{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2,auto);
+  grid-gap: 10px;
+}
 
+.left .buttons button{
+  background-color: var(--Primary-Button);
+  height: 35px;
+  border-radius: 6px;
+  border: none;
+  color: var(--Primary);
+}
   
   
 /*! Style for Card */
-  .card{
-    background-color: #ee6292;
-  }
+.card{
+  /* background-color: #ee6292; */
+}
+
+
+body::before {
+  /* background: #0C101B; */
+}

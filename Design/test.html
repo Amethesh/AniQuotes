@@ -11,25 +11,38 @@
 	</head>
 	<body>
 		<div class="navbar"></div>
-		<div class="container">
-			<section class="left">
-				<div class="input">
-					<input type="text" />
-				</div>
-				<div class="buttons">
-					<button>Get Random</button><button>Get 10 Random</button><button>Get Anime Quote</button
-					><button>Get Character Quote</button>
-				</div>
-			</section>
-			<section class="card">
-				<h1 className="title">Bleach</h1>
-				<img src="https://cdn.quotesgram.com/img/77/62/95369770-Aizen-aizen-17068383-1670-1450.jpg" />
-				<h2 className="character">Aizen</h2>
-				<p className="quote">
-					Any betrayal you can see is trivial, what is truly frightening and much more lethal, is the betrayal you
-					cannot see
-				</p>
-			</section>
+		<div class="main">
+			<div class="container">
+				<section class="left">
+					<img src="../src/assets/quote-logo.png" alt="NOT-FOUND" />
+					<h1>AniQuotes</h1>
+					<div class="input">
+						<input type="text" />
+					</div>
+					<div class="buttons">
+						<button>Get Random</button>
+						<button>Get 10 Random</button>
+
+						<button>Get Anime Quote</button>
+						<button>Get Character Quote</button>
+					</div>
+				</section>
+				<section class="card">
+					<h1 className="title">Bleach</h1>
+					<img src="https://cdn.quotesgram.com/img/77/62/95369770-Aizen-aizen-17068383-1670-1450.jpg" />
+					<h2 className="character">Aizen</h2>
+					<p className="quote">
+						Any betrayal you can see is trivial, what is truly frightening and much more lethal, is the betrayal you
+						cannot see
+					</p>
+				</section>
+			</div>
+
+			<svg>
+				<filter id="noiseFilter">
+					<feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
+				</filter>
+			</svg>
 		</div>
 	</body>
 </html>
