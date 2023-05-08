@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;0,800;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;700&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
 :root {
   --Primary: #fee1f6 ;
   --Secondary: #181e28;
@@ -5,22 +9,14 @@
   --Primary-Button: #e055b8;
   --Secondary-Button: #bdffff ;
   --Accent: #e055b8;
-  --grident: linear-gradient(90deg, #e055b8, #fee1f6 );
+  --gradient: linear-gradient(90deg, #e055b8, #fee1f6 );
 
 }
-
-
 
 body {
   background-color: var(--Secondary);
+  font-family: "Sora", monospace;
 }
-
-/* .main{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100vh;
-} */
 
 .container {
   /* filter: url(#noiseFilter); */
@@ -46,10 +42,13 @@ body {
   margin-bottom: 30px;
 }
 
-.left h1{
+.left h1 {
+  background-image: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: auto;
-  background: var(--grident);
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .left .input{
